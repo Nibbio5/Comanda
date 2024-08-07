@@ -1,22 +1,40 @@
 {
   "project_info": {
-    "project_number": "444227457876",
-    "firebase_url": "https://ai-ochi-default-rtdb.europe-west1.firebasedatabase.app",
-    "project_id": "ai-ochi",
-    "storage_bucket": "ai-ochi.appspot.com"
+    "project_number": "166736659018",
+    "project_id": "comanda-b935f",
+    "storage_bucket": "comanda-b935f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:444227457876:android:c85d6e80c16cef1af82ec1",
+        "mobilesdk_app_id": "1:166736659018:android:bf558c6e6f0699a0c45cb3",
         "android_client_info": {
-          "package_name": "com.example.ai_ochi"
+          "package_name": "com.example.comanda"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDOoGPYO5iRu5ML0XotqjEEztnVyEL2LRQ"
+          "current_key": "AIzaSyBFqcjA-akE6MbRjfkc8HvJZpMYTZNER_M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:166736659018:android:4cb34295ee21b3dac45cb3",
+        "android_client_info": {
+          "package_name": "com.exmple.comanda"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFqcjA-akE6MbRjfkc8HvJZpMYTZNER_M"
         }
       ],
       "services": {
