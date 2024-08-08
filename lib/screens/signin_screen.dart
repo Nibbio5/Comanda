@@ -41,12 +41,12 @@ class _SignInScreenState extends State<SignInScreen> {
               const SizedBox(
                 height: 20,
               ),
-              reusableTextField("Enter Paasord", Icons.lock_outline, true,
+              reusableTextField("Enter Password", Icons.lock_outline, true,
                   _passwordTextController),
               const SizedBox(
                 height: 20,
               ),
-              signInSignUpButton(context, true, () {
+              roundedButton(context, true, () {
                 FirebaseAuth.instance
                     .signInWithEmailAndPassword(
                         email: _emailTextController.text,
@@ -55,7 +55,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => const TableGrid())));
-              }),
+              }, "LOG IN"),
               signUpOption()
             ]),
           ),

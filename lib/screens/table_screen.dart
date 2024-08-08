@@ -43,7 +43,8 @@ class _TableGridState extends State<TableGrid> {
                 _isExpandedInside = expanded;
               });
             },
-            children: _buildTableGrid(5, 'D'), // 10 tavoli interni
+            children:
+                _buildTableGrid(5, 'D', 0, startFrom: 0), // 10 tavoli interni
           ),
           ExpansionTile(
             title: const Text('Tavoli Esterni'),
@@ -54,7 +55,7 @@ class _TableGridState extends State<TableGrid> {
               });
             },
             children:
-                _buildTableGrid(10, 'F', startFrom: 0), // 8 tavoli esterni
+                _buildTableGrid(10, 'F', 5, startFrom: 0), // 8 tavoli esterni
           ),
           ExpansionTile(
             title: const Text('Dietro caffè'),
@@ -64,8 +65,8 @@ class _TableGridState extends State<TableGrid> {
                 _isExpandedOutside = expanded;
               });
             },
-            children:
-                _buildTableGrid(3, 'D Caffè', startFrom: 0), // 8 tavoli esterni
+            children: _buildTableGrid(3, 'D Caffè', 15,
+                startFrom: 0), // 8 tavoli esterni
           ),
           ExpansionTile(
             title: const Text('Dietro Palestra'),
@@ -75,7 +76,7 @@ class _TableGridState extends State<TableGrid> {
                 _isExpandedOutside = expanded;
               });
             },
-            children: _buildTableGrid(3, 'D Palestra',
+            children: _buildTableGrid(3, 'D Palestra', 18,
                 startFrom: 0), // 8 tavoli esterni
           ),
         ],
@@ -83,7 +84,8 @@ class _TableGridState extends State<TableGrid> {
     );
   }
 
-  List<Widget> _buildTableGrid(int count, String section, {int startFrom = 0}) {
+  List<Widget> _buildTableGrid(int count, String section, int offset,
+      {int startFrom = 0}) {
     return [
       Padding(
         padding: const EdgeInsets.all(8.0),
@@ -97,7 +99,7 @@ class _TableGridState extends State<TableGrid> {
           ),
           itemCount: count,
           itemBuilder: (context, index) {
-            int tableIndex = startFrom + index;
+            int tableIndex = startFrom + index + offset;
             bool isSelected = _selectedTableIndex == tableIndex;
             return GestureDetector(
               onTap: () {
@@ -116,7 +118,7 @@ class _TableGridState extends State<TableGrid> {
                 ),
                 child: Center(
                   child: Text(
-                    '$section ${tableIndex + 1}',
+                    '$section ${tableIndex + 1 - offset}',
                     style: TextStyle(
                       color: isSelected ? Colors.white : Colors.black,
                       fontWeight:
