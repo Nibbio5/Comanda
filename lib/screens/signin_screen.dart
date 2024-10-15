@@ -1,6 +1,5 @@
 // import 'package:comanda/screens/home_screen.dart';
 import 'package:comanda/screens/signup_screen.dart';
-import 'package:comanda/screens/table_screen.dart';
 import 'package:comanda/utils/color_utils.dart';
 import 'package:comanda/widgets/reusable_widgets.dart';
 import 'package:flutter/material.dart';
