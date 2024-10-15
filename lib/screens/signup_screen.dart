@@ -1,7 +1,6 @@
 import 'package:comanda/screens/home_screen.dart';
 import 'package:comanda/utils/color_utils.dart';
 import 'package:comanda/widgets/reusable_widgets.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -59,16 +58,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   height: 20,
                 ),
                 roundedButton(context, true, () {
-                  FirebaseAuth.instance
-                      .createUserWithEmailAndPassword(
-                          email: _emailTextController.text,
-                          password: _passwordTextController.text)
-                      .then((value) => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const HomeScreen())))
-                      .onError((error, stackTrace) =>
-                          print("Error ${error.toString()}"));
                 }, "SIGN UP")
               ],
             ),

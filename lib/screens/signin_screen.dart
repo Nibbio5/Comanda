@@ -3,7 +3,6 @@ import 'package:comanda/screens/signup_screen.dart';
 import 'package:comanda/screens/table_screen.dart';
 import 'package:comanda/utils/color_utils.dart';
 import 'package:comanda/widgets/reusable_widgets.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -46,16 +45,7 @@ class _SignInScreenState extends State<SignInScreen> {
               const SizedBox(
                 height: 20,
               ),
-              roundedButton(context, true, () {
-                FirebaseAuth.instance
-                    .signInWithEmailAndPassword(
-                        email: _emailTextController.text,
-                        password: _passwordTextController.text)
-                    .then((value) => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const TableGrid())));
-              }, "LOG IN"),
+              roundedButton(context, true, () {}, "LOG IN"),
               signUpOption()
             ]),
           ),
